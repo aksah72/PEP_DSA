@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+void palindrome(string s){
+    string str = s;
+    int i = 0 , j = s.size()-1;
+    while(i<j){
+        swap(s[i],s[j]);
+        i++;
+        j--;
+    }
+    if(str==s) cout<<"true";
+    else cout<<"false";
+}
+
+int main(){
+    string str = "Naman";
+    
+    palindrome(str);
+}
+
+
+
+
+bool palindrome(string str){
+    int low = 0 , high = str.size()-1;
+    while(low<high){
+        if(str[low] != str[high]) return false;
+        low++;
+        high--;
+    }
+    return false;
+}

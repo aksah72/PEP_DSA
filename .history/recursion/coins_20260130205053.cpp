@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int> coins(n);
+    for(int i = 0;i<n;i++){
+        cin>>coins[i];
+    }
+    int target;
+    cin>>target;
+
+    vector<int> dp(target+1,INT_MAX);
+
+    for(int i =)
+}

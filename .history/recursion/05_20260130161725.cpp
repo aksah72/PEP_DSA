@@ -1,0 +1,2 @@
+#include<iostream>
+using nasme

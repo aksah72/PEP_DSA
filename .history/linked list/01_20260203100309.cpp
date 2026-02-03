@@ -40,46 +40,25 @@ void insertionAtBeg(Node* &head , int val){
 void insertionAtn(Node* &head , int val , int position){
     Node* node = new Node(val);
     if(head == NULL) node = head;
-    if(position==1){
-        node->next = head->next;
-        node = head;
-        return;
-    }
     Node* temp = head;
-    int c = 1;
-    while(c!=position-1 && temp != NULL){
+    int c = 0;
+    while(cposition){
         temp = temp->next;
         c++;
     }
-    if(temp==NULL) return;
     Node* curr = temp->next;
     temp->next = node;
     node->next = curr;
 
 }
 
-void deleteAtend(Node* &head){
-    if(head->next == NULL ) head = NULL;
-    Node* temp = head;
-    while(temp->next->next !=NULL){
-        temp = temp->next;
-    }
-    temp->next = NULL; 
-}
-
-void reverse(Node* &head){
-    Node* temp = head;
-    
-}
-
 
 void print(Node* head){
     Node* temp = head;
     while(temp != NULL){
-        cout<<temp->data<<"->";
+        cout<<temp->data<<endl;
         temp = temp->next;
     }
-    cout<<"NULL"<<endl;
 }
 
 
@@ -94,9 +73,6 @@ int main(){
     //cout<<endl;
     insertionAtBeg(head , 1);
     insertionAtn(head,15,3);
-    print(head);
-    deleteAtend(head);
-    cout<<endl; 
     print(head);
     return 0;
 }

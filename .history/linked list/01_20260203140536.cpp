@@ -67,11 +67,6 @@ void deleteAtend(Node* &head){
     temp->next = NULL; 
 }
 
-void reverse(Node* &head){
-    Node* temp = head;
-    
-}
-
 
 void print(Node* head){
     Node* temp = head;

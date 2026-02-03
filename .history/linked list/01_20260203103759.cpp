@@ -47,11 +47,10 @@ void insertionAtn(Node* &head , int val , int position){
     }
     Node* temp = head;
     int c = 1;
-    while(c!=position-1 && temp != NULL){
+    while(c!=position-1){
         temp = temp->next;
         c++;
     }
-    if(temp==NULL) return;
     Node* curr = temp->next;
     temp->next = node;
     node->next = curr;
@@ -67,11 +66,6 @@ void deleteAtend(Node* &head){
     temp->next = NULL; 
 }
 
-void reverse(Node* &head){
-    Node* temp = head;
-    
-}
-
 
 void print(Node* head){
     Node* temp = head;
@@ -79,7 +73,7 @@ void print(Node* head){
         cout<<temp->data<<"->";
         temp = temp->next;
     }
-    cout<<"NULL"<<endl;
+    cout<<"NULL"
 }
 
 

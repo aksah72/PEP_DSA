@@ -64,6 +64,7 @@ void deleteAtend(Node* &head){
     while(temp->next->next !=NULL){
         temp = temp->next;
     }
+    delete temp->next->next;
     temp->next = NULL;
 }
 

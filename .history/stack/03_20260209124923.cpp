@@ -27,7 +27,7 @@ class MyStack{
 
     void pop(){
         if(top == NULL){
-            cout<<"Stack Underflow"<<endl;
+            cout<<"Stack Underflow"<endl;
             return;
         }
 
@@ -37,7 +37,7 @@ class MyStack{
     }
     int peek(){
          if(top == NULL){
-            cout<<"Stack Underflow"<<endl;
+            cout<<"Stack Underflow"<endl;
             return -1;
         }
         return top->data;
@@ -52,8 +52,5 @@ class MyStack{
 int main(){
     MyStack st;
     st.push(5);
-    cout<<st.peek();
-    st.push(10);
-    st.push(15);
     cout<<st.peek();
 }

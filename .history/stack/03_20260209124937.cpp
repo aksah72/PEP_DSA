@@ -53,7 +53,4 @@ int main(){
     MyStack st;
     st.push(5);
     cout<<st.peek();
-    st.push(10);
-    st.push(15);
-    cout<<st.peek();
 }

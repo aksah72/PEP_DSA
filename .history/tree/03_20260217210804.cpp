@@ -13,7 +13,7 @@
 // https://leetcode.com/problems/search-in-a-binary-search-tree/description/
 
 
- // Definition for a binary tree node.
+  Definition for a binary tree node.
  struct TreeNode {
        int val;
        TreeNode *left;

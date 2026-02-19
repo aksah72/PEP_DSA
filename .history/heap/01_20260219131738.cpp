@@ -1,0 +1,7 @@
+/*
+Heap is a complete binary tree that follows the heap order property;
+
+#Complete Binary Tree : All levels are completely filled except the last level , the last level is filled from left to right.
+
+#Heap Property : 1. 
+*/

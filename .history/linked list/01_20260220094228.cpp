@@ -91,7 +91,7 @@ Node* solve(Node* head){
         }
         else{
             odd->next= temp;
-            odd = odd->next;
+            odd =z
         }
         temp=temp->next;
         i++;
@@ -106,7 +106,7 @@ Node* solve(Node* head){
 int main(){
     Node * head = NULL;
     insertionAtEnd(head,5);
-    insertionAtEnd(head,50);
+    insertionAtEnd(head,50)
     insertionAtEnd(head,500);
     insertionAtEnd(head,5000);
     //print(head);

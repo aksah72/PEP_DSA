@@ -1,0 +1,55 @@
+/*
+A graph G = (V,E) consist of : 
+
+V -> Set of Vertices(nodes) -> An individual object in Graph
+E -> Set of edges connecting pairs of vertices
+
+-- Directed Graph    -> edges have direction
+-- Undirected Graph  -> edges have no direction
+-- Weighted Graph    -> edges have values(weight/cost/distance)
+-- Unweighted Graph
+
+* Path -> A sequence of vertices connected edges
+
+* Cycle -> A path that start and end at the same vertices
+
+* Degree -> In undirected graph -> number of edge connected to the vertex
+
+In directed graph ->
+                -- In degree  -> incoming edges
+                -- Out degree -> outgoing edges
+*/
+
+
+#include<iostream>
+#include<list>
+#include<unordered_map>
+
+using namespace std;
+
+int main(){
+    int n ,m;
+    cout<<"Enter no of vertices : ";
+    cin>>n;
+    cout<<"Enter no of edges : ";
+    cin>>m;
+
+    unordered_map<int,list<int>> adjList;
+
+    for(int i=0;i<m;i++){
+        int u,v;
+        cin>>u>>v;
+        adjList[u].push_back(v);
+        adjList[v].push_back(u);
+
+    }
+
+    cout<<"Adjancy List : "<<endl;
+
+    for(auto i : adjList){
+        cout<<i.first<<"->";
+        for(auto j : i.second){
+            cout<<j
+        }
+    }
+}

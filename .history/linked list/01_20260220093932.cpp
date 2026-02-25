@@ -84,21 +84,7 @@ Node* solve(Node* head){
     Node* prev = even;
     Node* temp = prev;
 
-    while(temp != NULL){
-        if(i % 2 == 0){
-            even->next = temp;
-            even = even->next;
-        }
-        else{
-            odd->next= temp;
-            odd = odd->next;
-        }
-        temp=temp->next;
-        i++;
-    }
-    odd->next = prev;
-
-    return head;
+    while(tem != NULL)
 }
 
 
@@ -116,9 +102,6 @@ int main(){
     print(head);
     deleteAtend(head);
     cout<<endl; 
-    print(head);
-
-    Node * root = solve(head);
     print(head);
     return 0;
 }

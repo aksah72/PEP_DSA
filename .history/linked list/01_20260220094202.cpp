@@ -91,7 +91,6 @@ Node* solve(Node* head){
         }
         else{
             odd->next= temp;
-            odd = odd->next;
         }
         temp=temp->next;
         i++;

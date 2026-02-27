@@ -12,7 +12,7 @@ int main(){
     cin>>k;
     string str="";
     int cnt=0;
-    int maxCnt = 0;
+    int 
     vector<bool> visit(26,false);
     for(int i=0;i<s.size();i++){
         if(visit[s[i]-'a']){

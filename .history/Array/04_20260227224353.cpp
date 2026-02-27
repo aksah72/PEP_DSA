@@ -25,7 +25,7 @@ int main(){
         }
         else break;
     }
-    //
+    /
     cout<<str.size();
     return 0;
 }

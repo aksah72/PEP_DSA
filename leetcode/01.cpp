@@ -313,3 +313,39 @@ public:
         return merge(left,right);
     }
 };
+
+//https://leetcode.com/problems/merge-k-sorted-lists/description/?envType=problem-list-v2&envId=heap-priority-queue
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        vector<int> res;
+        int n = lists.size();
+        for(int i=0;i<n;i++){
+            while(lists[i]){
+                res.push_back(lists[i]->val);
+                lists[i] = lists[i]->next;
+            }
+        }
+        sort(res.begin(),res.end());
+        ListNode* ans = new ListNode(-1);
+        ListNode* curr = ans;
+        for(int i : res){
+            ans->next = new ListNode(i);
+            ans = ans->next;
+        }
+        return curr->next;
+        
+    }
+};

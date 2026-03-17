@@ -455,3 +455,38 @@ public:
         return i;
     }
 };
+
+
+//https://leetcode.com/problems/happy-number/description/?envType=problem-list-v2&envId=two-pointers
+
+class Solution {
+public:
+    long long product(int n){
+        long long p =1;
+        p = n*n;
+        return p;
+    }
+    int happy(int n){
+        int num =n;
+        int sum = 0;
+        while(num>0){
+            int d = num % 10;
+            sum += product(d);
+            num = num/10;
+        }
+        return sum;
+    }
+    bool isHappy(int n) {
+        set<int>s;
+        int ans = happy(n);
+        s.insert(ans);
+        while(ans>0){
+            ans = happy(ans);
+            if(s.find(ans) != s.end()) break;
+            s.insert(ans);
+            
+        }
+        if(ans==1) return true;
+        return false;
+    }
+};

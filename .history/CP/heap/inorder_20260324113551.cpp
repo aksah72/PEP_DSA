@@ -45,7 +45,6 @@ void bfs(Node* root){
         cout<<endl;
     }
 }
-
 int main(){
     Node* root = NULL;
     root = new Node(1);

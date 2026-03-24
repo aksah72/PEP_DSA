@@ -42,10 +42,8 @@ void bfs(Node* root){
             if(front->left) q.push(front->left);
             if(front->right) q.push(front->right);
         }
-        cout<<endl;
     }
 }
-
 int main(){
     Node* root = NULL;
     root = new Node(1);
@@ -60,8 +58,6 @@ int main(){
     root->right->left->right = new Node(10);
     root->right->right->left = new Node(12);
 
-    //inorder(root);
-
-    bfs(root);
+    inorder(root);
     return 0;
 }

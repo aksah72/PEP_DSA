@@ -17,7 +17,6 @@ class Node{
 };
 
 void inorder(Node* root){
-    if(root == NULL) return;
     stack<Node*>st;
     while(root != NULL || !st.empty()){
         while(root != NULL){
@@ -31,8 +30,7 @@ void inorder(Node* root){
     }
 }
 
-void bfs(Node* root){
-    if(root == NULL) return;
+void bfs(Node* root){.
     queue<Node*> q;
     q.push(root);
     while(!q.empty()){

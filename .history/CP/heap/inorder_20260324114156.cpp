@@ -17,7 +17,7 @@ class Node{
 };
 
 void inorder(Node* root){
-    if(root == NULL) return;
+    if(root == )
     stack<Node*>st;
     while(root != NULL || !st.empty()){
         while(root != NULL){

@@ -640,23 +640,3 @@ public:
 
 //https://leetcode.com/problems/reverse-only-letters/submissions/1961787358/?envType=problem-list-v2&envId=two-pointers
 
-class Solution {
-public:
-    string reverseOnlyLetters(string s) {
-        int left = 0, right = s.size() - 1;
-        
-        while (left < right) {
-            if (!isalpha(s[left])) {
-                left++;
-            } else if (!isalpha(s[right])) {
-                right--;
-            } else {
-                swap(s[left], s[right]);
-                left++;
-                right--;
-            }
-        }
-        
-        return s;
-    }
-};

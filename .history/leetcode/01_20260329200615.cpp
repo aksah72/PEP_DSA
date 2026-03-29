@@ -662,8 +662,6 @@ public:
 };
 
 
-//https://leetcode.com/problems/count-binary-substrings/submissions/1962937857/?envType=problem-list-v2&envId=two-pointers
-
 class Solution {
 public:
     int countBinarySubstrings(string s) {

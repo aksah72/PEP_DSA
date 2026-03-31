@@ -17,7 +17,7 @@ string removeDuplicates(string &s){
 
 int main(){
     string str = "banana";
-    cout<<removeDuplicates(str);
+    cout<<removeDuplicates(str);   
 }
 
 

@@ -3,21 +3,6 @@
 #include<vector>
 using namespace std;
 
-int main(){
-    string str = "banana";
-    set<char> s;
-    for(int i = 0;i<str.size();i++){
-        s.insert(str[i]);
-
-    }
-    for(auto &i : s){
-        cout<<i;
-    }
-}
-
-
-
-
 string removeDuplicates(string &s){
     vector<bool> visited(256,false);
     string result = "";
@@ -27,5 +12,13 @@ string removeDuplicates(string &s){
             visited[i] = true;
         }
     }
-    return 
+    return result;
 }
+
+int main(){
+    string str = "banana";
+    cout<<removeDuplicates(str);   
+}
+
+
+

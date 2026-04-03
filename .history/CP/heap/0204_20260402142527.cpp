@@ -64,7 +64,7 @@ int main(){
     //root->left->right->left = new Node(6);
     //root->right->left->right = new Node(10);
     root->right->right->left = new Node(8);
-    
+
 
     int k;
     cin>>k;

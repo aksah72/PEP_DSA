@@ -686,39 +686,4 @@ public:
 };
 
 
-//https://leetcode.com/problems/reorder-list/description/?envType=problem-list-v2&envId=two-pointers
-
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-class Solution {
-public:
-    void reorderList(ListNode* head) {
-        vector<ListNode*> vec;
-
-        ListNode* temp = head;
-        while(temp){
-            vec.push_back(temp);
-            temp=temp->next;
-        }
-        int n = vec.size();
-        int start = 0 , end = n-1;
-        while(start<end){
-            vec[start]->next = vec[end];
-            start++;
-
-            if(start==end) break;
-
-            vec[end]->next = vec[start];
-            end--;
-        }
-        vec[start]->next = NULL;
-    }
-};
+//

@@ -6,13 +6,27 @@
 
 */
 
+
+
 #include<iostream>
 #include<queue>
 
 using namespace std;
 
 int main(){
-    priority_queue<int> pq; // (max heap)
+    priority_queue<int> pq_max; // (max heap)
 
-    priority_queue<int
+    priority_queue<int,vector<int>,greater<int>> pq_min; // (min heap)
+
+    pq_max.push(5);
+    pq_max.push(10);
+    pq_max.push(20);
+    pq_max.push(200);
+
+
+    cout<<pq_max.size()<<endl;
+    while(!pq_max.empty()){
+        cout<<pq_max.top()<<" ";
+        pq_max.pop();
+    } 
 }

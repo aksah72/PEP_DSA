@@ -48,7 +48,6 @@ void bfs(Node* root){
     }
 }
 
-
 int main(){
     Node* root = NULL;
     root = new Node(1);

@@ -67,7 +67,7 @@ int main(){
 
     int ans = 0;
 
-    for(int i : v1) cout<<i<<" ";
+    /*for(int i : v1) cout<<i<<" ";
     cout<<endl;
     for(int i : v2) cout<<i<<" ";
     

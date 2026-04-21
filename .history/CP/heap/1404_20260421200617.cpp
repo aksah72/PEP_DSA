@@ -67,10 +67,10 @@ int main(){
 
     int ans = 0;
 
-    for(int i : v1) cout<<i<<" ";
+    /*for(int i : v1) cout<<i<<" ";
     cout<<endl;
     for(int i : v2) cout<<i<<" ";
-    
+    */
 
     for(int i=0;i<v1.size();i++){
         if(v1[i] != v2[i]) break;

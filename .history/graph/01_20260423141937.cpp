@@ -63,12 +63,11 @@ int main(){
         q.push(i.first);
         while(!q.empty()){
             if(!visited[q.front()]){
-                cout<<q.front()<<" ";
+                cout<<q.front();
                 visited[q.front()]=true;
-                for(auto j : i.second){
+                for(auto j : i.first){
                     q.push(j);
                 }
-            }
         }
     }
 }

@@ -23,8 +23,6 @@ In directed graph ->
 
 #include<iostream>
 #include<list>
-#include<vector>
-#include<queue>
 #include<unordered_map>
 
 using namespace std;
@@ -56,19 +54,5 @@ int main(){
         cout<<endl;
     }
 
-    vector<bool> visited(n,false);
-    queue<int> q;
-
-    for(auto i : adjList){
-        q.push(i.first);
-        while(!q.empty()){
-            if(!visited[q.front()]){
-                cout<<q.front()<<" ";
-                visited[q.front()]=true;
-                for(auto j : i.second){
-                    q.push(j);
-                }
-            }
-        }
-    }
+    vector<bool>
 }

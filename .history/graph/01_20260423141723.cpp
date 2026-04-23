@@ -60,15 +60,6 @@ int main(){
     queue<int> q;
 
     for(auto i : adjList){
-        q.push(i.first);
-        while(!q.empty()){
-            if(!visited[q.front()]){
-                cout<<q.front()<<" ";
-                visited[q.front()]=true;
-                for(auto j : i.second){
-                    q.push(j);
-                }
-            }
-        }
+        q.push(i.first)
     }
 }

@@ -25,23 +25,6 @@ In directed graph ->
 #include<queue>
 using namespace std;
 
-
-vector<vector<int>> adjList(5);
-
-void dfs(int source , vector<bool> &visit){
-    if(visit[source]) return;
-
-    visit[source]= true;
-    cout<<source<<" ";
-
-    for(int i=0;i<adjList[source].size();i++){
-        int v = adjList[source][i];
-        if(!visit[v]){
-            dfs(v,visit);
-        }
-    }
-}
-
 int main(){
     int n ,m;
     cout<<"Enter no of vertices : ";
@@ -49,11 +32,13 @@ int main(){
     cout<<"Enter no of edges : ";
     cin>>m;
 
+    vector<vector<int>> adjList(n);
+
     for(int i=0;i<m;i++){ 
         int u,v;
         cin>>u>>v;
         adjList[u].push_back(v);
-        adjList[v].push_back(u); // for undirected graph
+        // adjList[v].push_back(u); // for undirected graph
     }
 
     cout<<"Adjacency List : "<<endl;
@@ -87,61 +72,7 @@ int main(){
             }
         }
     }
-    cout<<endl;
-    vector<bool> visit(5,false);
-    dfs(4,visit);
 }
-
-/*
-
-#include<iostream>
-#include<vector>
-#include<queue>
-using namespace std;
-
-struct node{
-    int data;
-    node * next;
-};
-
-vector<node*> head(5);
-
-node* addnode(int data){
-    node* newnode = new node;
-    newnode->data = data;
-    newnode->next = NULL;
-    return newnode;
-}
-
-void addedge(int u , int v){
-    if(head[u]==NULL){
-        head[u]=addnode(v);
-    }
-    else{
-        node* curr = head[u];
-        while(curr->next != NULL){
-            curr = curr->next;
-        }
-        curr->next = addnode(v);
-    }
-}
-
-
-
-
-
-
-
-int main(){
-    for(int i=0;i<5;i++){
-        head[i]=NULL;
-    }
-
-    addedge(0,1);
-    addedge(1,0);
-}
-
-*/
 
 
 

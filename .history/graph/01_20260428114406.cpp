@@ -28,8 +28,7 @@ using namespace std;
 
 vector<vector<int>> adjList(5);
 
-void dfs(int source , vector<bool> &visit){
-    if(visit[source]) return;
+void dfs(int source , vector<bool> &
 
     visit[source]= true;
     cout<<source<<" ";

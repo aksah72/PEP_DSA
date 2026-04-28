@@ -20,27 +20,12 @@ In directed graph ->
                 -- Out degree -> outgoing edges
 */
 
+
+/*
 #include<iostream>
 #include<vector>
 #include<queue>
 using namespace std;
-
-
-vector<vector<int>> adjList(5);
-
-void dfs(int source , vector<bool> &visit){
-    if(visit[source]) return;
-
-    visit[source]= true;
-    cout<<source<<" ";
-
-    for(int i=0;i<adjList[source].size();i++){
-        int v = adjList[source][i];
-        if(!visit[v]){
-            dfs(v,visit);
-        }
-    }
-}
 
 int main(){
     int n ,m;
@@ -48,6 +33,8 @@ int main(){
     cin>>n;
     cout<<"Enter no of edges : ";
     cin>>m;
+
+    vector<vector<int>> adjList(n);
 
     for(int i=0;i<m;i++){ 
         int u,v;
@@ -87,12 +74,9 @@ int main(){
             }
         }
     }
-    cout<<endl;
-    vector<bool> visit(5,false);
-    dfs(4,visit);
 }
 
-/*
+*/
 
 #include<iostream>
 #include<vector>
@@ -103,8 +87,6 @@ struct node{
     int data;
     node * next;
 };
-
-vector<node*> head(5);
 
 node* addnode(int data){
     node* newnode = new node;
@@ -122,26 +104,11 @@ void addedge(int u , int v){
         while(curr->next != NULL){
             curr = curr->next;
         }
-        curr->next = addnode(v);
+        curr->next = addnode(v)
     }
 }
 
 
-
-
-
-
-
-int main(){
-    for(int i=0;i<5;i++){
-        head[i]=NULL;
-    }
-
-    addedge(0,1);
-    addedge(1,0);
-}
-
-*/
 
 
 

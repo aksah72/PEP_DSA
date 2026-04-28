@@ -28,18 +28,8 @@ using namespace std;
 
 vector<vector<int>> adjList(5);
 
-void dfs(int source , vector<bool> &visit){
-    if(visit[source]) return;
-
-    visit[source]= true;
-    cout<<source<<" ";
-
-    for(int i=0;i<adjList[source].size();i++){
-        int v = adjList[source][i];
-        if(!visit[v]){
-            dfs(v,visit);
-        }
-    }
+void dfs(int source , vector<bool> visit){
+    if(!visit)
 }
 
 int main(){

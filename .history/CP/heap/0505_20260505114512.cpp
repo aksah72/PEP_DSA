@@ -32,10 +32,6 @@ void bfs(vector<vector<int>>& grid, int i, int j, int n){
 }
 
 
-
-
-
-
 void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
     vector<vector<int>> ans(n,vector<int>(n,0));
 

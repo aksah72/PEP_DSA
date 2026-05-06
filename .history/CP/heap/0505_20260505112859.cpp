@@ -32,12 +32,8 @@ void bfs(vector<vector<int>>& grid, int i, int j, int n){
 }
 
 
-
-
-
-
 void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
-    vector<vector<int>> ans(n,vector<int>(n,0));
+    vector<vector<int>> ans(grid.size(),vector<int>(grid,size(),0));
 
     int dr[4] = {-1,1,0,0};
     int dc[4] = {0,0,-1,1};
@@ -60,16 +56,14 @@ void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
             int nc = c+dr[k];
 
 
-            if(nr>=0 && nc>=0 && nr<n && nc<n && grid[nc][nr] != 0){
-
-                if(grid[nr+1][nc] == 0 || grid[nr-1][nc]==0 || grid[nr][nc+1] == 0 || grid[nr][nc-1]==0){
-                    grid[nr][nc]=1;
-                }
-                else grid[nr][nc] = grid[r][c]+1;
+            if(nr>=0 && nc>=0 && nr<n && nc<n && grid[nc][nr] !=0){
+                grid[nr][nc] = grid[r][c]+1;
                 q.push({nr,nc});
             }
         }
     }
+
+
 }
 
 int main(){

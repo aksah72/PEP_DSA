@@ -32,12 +32,8 @@ void bfs(vector<vector<int>>& grid, int i, int j, int n){
 }
 
 
-
-
-
-
-void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
-    vector<vector<int>> ans(n,vector<int>(n,0));
+vector<vector<int>> distancefromzero(vector<vector<int>> &grid , int i ,int j){
+    vector<vector<int>> ans(grid.size(),vector<int>(grid,size(),0));
 
     int dr[4] = {-1,1,0,0};
     int dc[4] = {0,0,-1,1};
@@ -46,30 +42,19 @@ void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
 
     q.push({i,j});
 
-    grid[i][j]=1;
-
     while(!q.empty()){
         auto it = q.front();
-        q.pop();
 
         int r = it.first;
         int c = it.second;
 
         for(int k=0;k<4;k++){
             int nr = r+dr[k];
-            int nc = c+dr[k];
-
-
-            if(nr>=0 && nc>=0 && nr<n && nc<n && grid[nc][nr] != 0){
-
-                if(grid[nr+1][nc] == 0 || grid[nr-1][nc]==0 || grid[nr][nc+1] == 0 || grid[nr][nc-1]==0){
-                    grid[nr][nc]=1;
-                }
-                else grid[nr][nc] = grid[r][c]+1;
-                q.push({nr,nc});
-            }
+            int nc = 
         }
     }
+
+
 }
 
 int main(){
@@ -88,21 +73,14 @@ int main(){
 
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            if(grid[i][j] != 0){
-                //bfs(grid, i, j, n);
-                //ans++;
-                distancefromzero(grid,i,j,n);
+            if(grid[i][j] == 1){
+                bfs(grid, i, j, n);
+                ans++;
             }
         }
     }
 
-    //cout<<ans;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cout<<grid[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    cout<<ans;
 }
 
 

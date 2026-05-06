@@ -32,10 +32,6 @@ void bfs(vector<vector<int>>& grid, int i, int j, int n){
 }
 
 
-
-
-
-
 void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
     vector<vector<int>> ans(n,vector<int>(n,0));
 
@@ -60,7 +56,7 @@ void distancefromzero(vector<vector<int>> &grid , int i ,int j,int n){
             int nc = c+dr[k];
 
 
-            if(nr>=0 && nc>=0 && nr<n && nc<n && grid[nc][nr] != 0){
+            if(nr>=0 && nc>=0 && nr<n-1 && nc<n-1 && grid[nc][nr] == 1){
 
                 if(grid[nr+1][nc] == 0 || grid[nr-1][nc]==0 || grid[nr][nc+1] == 0 || grid[nr][nc-1]==0){
                     grid[nr][nc]=1;

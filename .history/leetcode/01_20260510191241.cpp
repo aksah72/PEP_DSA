@@ -660,3 +660,117 @@ public:
         return s;
     }
 };
+
+
+//https://leetcode.com/problems/count-binary-substrings/submissions/1962937857/?envType=problem-list-v2&envId=two-pointers
+
+class Solution {
+public:
+    int countBinarySubstrings(string s) {
+        int prev = 0, curr = 1, ans = 0;
+        
+        for (int i = 1; i < s.size(); i++) {
+            if (s[i] == s[i - 1]) {
+                curr++;
+            } else {
+                ans += min(prev, curr);
+                prev = curr;
+                curr = 1;
+            }
+        }
+        
+        
+        ans += min(prev, curr);
+        return ans;
+    }
+};
+
+
+//https://leetcode.com/problems/reorder-list/description/?envType=problem-list-v2&envId=two-pointers
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    void reorderList(ListNode* head) {
+        vector<ListNode*> vec;
+
+        ListNode* temp = head;
+        while(temp){
+            vec.push_back(temp);
+            temp=temp->next;
+        }
+        int n = vec.size();
+        int start = 0 , end = n-1;
+        while(start<end){
+            vec[start]->next = vec[end];
+            start++;
+
+            if(start==end) break;
+
+            vec[end]->next = vec[start];
+            end--;
+        }
+        vec[start]->next = NULL;
+    }
+};
+
+
+
+// https://leetcode.com/problems/find-the-difference/description/?envType=problem-list-v2&envId=sorting
+
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        char ans = 0;
+
+        for(char c :s) ans ^= c;
+        for(char c :t) ans ^= c;
+
+        return ans;
+
+    }
+};
+
+//leetcode200
+
+
+class Solution {
+public:
+    void island(vector<vector<char>>& grid , int i ,int j){
+        if(i<0 || i>=grid.size() || j<0 || j>=grid[0].size() || grid[i][j] != '1') return;
+
+        grid[i][j]='0';
+        island(grid,i+1,j);
+        island(grid,i-1,j);
+        island(grid,i,j+1);
+        island(grid,i,j-1);
+
+    }
+    int numIslands(vector<vector<char>>& grid) {
+        int m = grid.size();
+        int n = grid[0].size();
+        int cnt=0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(grid[i][j]=='1'){
+                    cnt++;
+                    island(grid,i,j);
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+
+
+

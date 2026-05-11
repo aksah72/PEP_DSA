@@ -726,3 +726,50 @@ public:
 
 
 // https://leetcode.com/problems/find-the-difference/description/?envType=problem-list-v2&envId=sorting
+
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        char ans = 0;
+
+        for(char c :s) ans ^= c;
+        for(char c :t) ans ^= c;
+
+        return ans;
+
+    }
+};
+
+//leetcode200  
+
+class Solution {
+public:
+    void island(vector<vector<char>>& grid , int i ,int j){
+        if(i<0 || i>=grid.size() || j<0 || j>=grid[0].size() || grid[i][j] != '1') return;
+
+        grid[i][j]='0';
+        island(grid,i+1,j);
+        island(grid,i-1,j);
+        island(grid,i,j+1);
+        island(grid,i,j-1);
+
+    }
+    int numIslands(vector<vector<char>>& grid) {
+        int m = grid.size();
+        int n = grid[0].size();
+        int cnt=0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(grid[i][j]=='1'){
+                    cnt++;
+                    island(grid,i,j);
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+
+
+

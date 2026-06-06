@@ -1,3 +1,6 @@
+//https://leetcode.com/problems/binary-tree-level-order-traversal/
+
+
 /*
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -29,10 +32,8 @@ public:
                 if(frontNode->right) que.push(frontNode->right);
 
             }
-            result.push_back(ans);
-                
+            result.push_back(ans);    
         }
         return result;
-
     }
 };

@@ -1,4 +1,4 @@
-
+//https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 
 /*
@@ -30,12 +30,9 @@ public:
                 ans.push_back(frontNode->val);
                 if(frontNode->left) que.push(frontNode->left); 
                 if(frontNode->right) que.push(frontNode->right);
-
             }
-            result.push_back(ans);
-                
+            result.push_back(ans);    
         }
         return result;
-
     }
 };

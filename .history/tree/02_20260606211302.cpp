@@ -30,6 +30,7 @@ public:
                 ans.push_back(frontNode->val);
                 if(frontNode->left) que.push(frontNode->left); 
                 if(frontNode->right) que.push(frontNode->right);
+
             }
             result.push_back(ans);    
         }

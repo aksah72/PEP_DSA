@@ -740,7 +740,9 @@ public:
     }
 };
 
-//leetcode200
+//leetcode200  
+
+
 class Solution {
 public:
     void island(vector<vector<char>>& grid , int i ,int j){
@@ -766,6 +768,74 @@ public:
             }
         }
         return cnt;
+    }
+};
+
+
+
+
+//https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=problem-list-v2&envId=string
+
+class Solution {
+public:
+    bool isVowel(char c) {
+        c = tolower(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+
+    string reverseVowels(string s) {
+        int i = 0, j = s.size() - 1;
+
+        while (i < j) {
+
+            while (i < j && !isVowel(s[i])) {
+                i++;
+            }
+
+            while (i < j && !isVowel(s[j])) {
+                j--;
+            }
+
+            swap(s[i], s[j]);
+
+            i++;
+            j--;
+        }
+
+        return s;
+    }
+};
+
+
+//https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        int i = 0 ,j = 0;
+        int ans = -1;
+        for(int k = 0;k<haystack.size();k++){
+            string s = haystack.substr(k,needle.size());
+            if(s == needle) return k;
+        }
+        return ans;
+    }
+};
+
+
+
+
+class Solution {
+public:
+    int arrayPairSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i += 2) {
+            sum += nums[i];
+        }
+
+        return sum;
     }
 };
 

@@ -865,33 +865,7 @@ public:
 
 
 
-//https://leetcode.com/problems/product-of-array-except-self/description/
-
-
-class Solution {
-public:
-    vector<int> productExceptSelf(vector<int>& nums) {
-        int p = 1 , chk=0;
-        int zero = 0;
-        for(int i : nums){
-            if(i != 0) {
-                p *=i ;
-                chk = 1;
-            }
-            else zero++;
-        }
-        vector<int> ans(nums.size(),0);
-        if(chk==0 || zero>1) return ans;
-
-        for(int i=0;i<nums.size();i++){ 
-            if(nums[i]!=0 && zero==0) ans[i] = p/nums[i];
-            else if(nums[i]!=0 && zero!=0) ans[i] = 0;
-            else ans[i] = p;
-        }
-        return ans;
-
-    }
-};
+//
 
 
 

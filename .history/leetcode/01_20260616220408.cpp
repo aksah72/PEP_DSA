@@ -895,35 +895,7 @@ public:
 
 //https://leetcode.com/problems/process-string-with-special-operations-i/description/?envType=daily-question&envId=2026-06-16
 
-class Solution {
-public:
-    string ans(string s , char c){
-        if(c=='*'){
-            return s.substr(0,s.size()-1);
-        }
-        else if(c=='#'){
-            s += s;
-            return s;
-        }
-        else{
-            reverse(s.begin(),s.end());
-            return s;
-        }
-    }
-    string processStr(string s) {
-        string str="";
-        for(int i=0;i<s.size();i++){
-            char c = s[i];
-            if(isalpha(c)){
-                str += c;
-            }
-            else{
-                str = ans(str,c);
-            }
-        }
-        return str;
-    }
-};
+
 
 
 

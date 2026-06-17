@@ -926,4 +926,18 @@ public:
 };
 
 
+//https://leetcode.com/problems/to-lower-case/description/?envType=problem-list-v2&envId=string
+
+
+class Solution {
+public:
+    string toLowerCase(string s) {
+        for(auto &c : s){
+            c = tolower(c);
+        }
+        return s;
+    }
+};
+
+
 

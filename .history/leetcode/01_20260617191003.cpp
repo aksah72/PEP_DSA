@@ -807,8 +807,7 @@ public:
 };
 
 
-//
-
+//https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
 
 class Solution {
 public:
@@ -822,6 +821,114 @@ public:
         return ans;
     }
 };
+
+
+//https://leetcode.com/problems/array-partition/?envType=problem-list-v2&envId=sorting
+
+class Solution {
+public:
+    int arrayPairSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i += 2) {
+            sum += nums[i];
+        }
+
+        return sum;
+    }
+};
+
+
+//https://leetcode.com/problems/weighted-word-mapping/description/?envType=daily-question&envId=2026-06-13
+
+
+class Solution {
+public:
+    string mapWordWeights(vector<string>& words, vector<int>& weights) {
+        string ans;
+
+        for (string &word : words) {
+            int sum = 0;
+
+            for (char c : word) {
+                sum += weights[c - 'a'];
+            }
+
+            int rem = sum % 26;
+            ans.push_back('z' - rem);
+        }
+
+        return ans;
+    }
+};
+
+
+
+//https://leetcode.com/problems/product-of-array-except-self/description/
+
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int p = 1 , chk=0;
+        int zero = 0;
+        for(int i : nums){
+            if(i != 0) {
+                p *=i ;
+                chk = 1;
+            }
+            else zero++;
+        }
+        vector<int> ans(nums.size(),0);
+        if(chk==0 || zero>1) return ans;
+
+        for(int i=0;i<nums.size();i++){ 
+            if(nums[i]!=0 && zero==0) ans[i] = p/nums[i];
+            else if(nums[i]!=0 && zero!=0) ans[i] = 0;
+            else ans[i] = p;
+        }
+        return ans;
+
+    }
+};
+
+//https://leetcode.com/problems/process-string-with-special-operations-i/description/?envType=daily-question&envId=2026-06-16
+
+class Solution {
+public:
+    string ans(string s , char c){
+        if(c=='*'){
+            return s.substr(0,s.size()-1);
+        }
+        else if(c=='#'){
+            s += s;
+            return s;
+        }
+        else{
+            reverse(s.begin(),s.end());
+            return s;
+        }
+    }
+    string processStr(string s) {
+        string str="";
+        for(int i=0;i<s.size();i++){
+            char c = s[i];
+            if(isalpha(c)){
+                str += c;
+            }
+            else{
+                str = ans(str,c);
+            }
+        }
+        return str;
+    }
+};
+
+
+//https://leetcode.com/problems/to-lower-case/description/?envType=problem-list-v2&envId=string
+
+
 
 
 

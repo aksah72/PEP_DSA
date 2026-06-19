@@ -945,19 +945,7 @@ public:
 
 //https://leetcode.com/problems/find-the-highest-altitude/description/?envType=daily-question&envId=2026-06-19
 
-class Solution {
-public:
-    int largestAltitude(vector<int>& gain) {
-        vector<int> alt(gain.size()+1);
-        int maxm = 0;
-        alt[0]=0;
-        for(int i=1;i<=gain.size();i++){
-            alt[i] = alt[i-1]+gain[i-1];
-            maxm = max(maxm,alt[i]);
-        }
-        return maxm;
-    }
-};
+
 
 
 

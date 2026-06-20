@@ -963,26 +963,7 @@ public:
 //https://leetcode.com/problems/largest-number/description/?envType=problem-list-v2&envId=string
 
 
-class Solution {
-public:
 
-    string largestNumber(vector<int>& nums) {
-        vector<string>num;
-        for(int i : nums){
-            num.push_back(to_string(i));
-        }
-        sort(num.begin(),num.end(),[](string a , string b){ 
-            return a+b>b+a;
-        }); 
-        if (num[0] == "0")
-            return "0";
-        string str="";
-        for(string s : num){
-            str += s;
-        }
-        return str;
-    }
-};
 
 
 

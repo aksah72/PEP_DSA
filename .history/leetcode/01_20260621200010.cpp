@@ -1005,19 +1005,7 @@ public:
 
 //https://leetcode.com/problems/power-of-two/description/?envType=problem-list-v2&envId=math
 
-class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-        int rem = -1;
-        if(n==1) return true;
-        if(n<=0) return false;
-        while(n>1){
-            if(n%2 != 0) return false;
-            n /= 2;
-        }
-        return true;
-    }
-};
+
 
 
 

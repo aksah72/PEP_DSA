@@ -987,21 +987,7 @@ public:
 //https://leetcode.com/problems/maximum-ice-cream-bars/description/?envType=daily-question&envId=2026-06-21
 
 
-class Solution {
-public:
-    int maxIceCream(vector<int>& costs, int coins) {
-        sort(costs.begin(),costs.end());
-        int ans=0,sum=0;
-        for(int i : costs){
-            if(sum<coins && i<coins){
-                sum += i;
-                ans++;
-            }
-            if(sum>coins) return ans-1;
-        }
-        return ans;
-    }
-};
+
 
 
 

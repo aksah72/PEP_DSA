@@ -1023,18 +1023,5 @@ public:
 //https://leetcode.com/problems/maximum-number-of-balloons/description/?envType=daily-question&envId=2026-06-22
 
 
-class Solution {
-public:
-    int maxNumberOfBalloons(string text) {
-        unordered_map<char,int>freq;
-        for(char t : text){
-            freq[t]++;
-        }
-        int ans=0;
-        string str="balloon";
-        return (min(freq['b'],min(freq['a'],min(freq['l']/2,min(freq['o']/2,freq['n'])))));
-    }
-};
-
 
 

@@ -1039,47 +1039,5 @@ public:
 
 //https://leetcode.com/problems/number-of-zigzag-arrays-i/description/?envType=daily-question&envId=2026-06-23
 
-class Solution {
-public:
-    int zigZagArrays(int n, int l, int r) {
-        const int MOD = 1e9 + 7;
-
-        int m = r - l + 1;
-
-        vector<int> up(m, 1), down(m, 1);
-        vector<int> newUp(m), newDown(m);
-        vector<int> pref(m + 1);
-
-        for (int len = 2; len <= n; len++) {
-
-            pref[0] = 0;
-            for (int i = 0; i < m; i++)
-                pref[i + 1] = (pref[i] + down[i]) % MOD;
-
-            for (int i = 0; i < m; i++)
-                newUp[i] = pref[i];
-
-            pref[0] = 0;
-            for (int i = 0; i < m; i++)
-                pref[i + 1] = (pref[i] + up[i]) % MOD;
-
-            int total = pref[m];
-
-            for (int i = 0; i < m; i++)
-                newDown[i] = (total - pref[i + 1] + MOD) % MOD;
-
-            swap(up, newUp);
-            swap(down, newDown);
-        }
-
-        long long ans = 0;
-        for (int i = 0; i < m; i++) {
-            ans = (ans + up[i] + down[i]) % MOD;
-        }
-
-        return (int)ans;
-    }
-};
-
 
 

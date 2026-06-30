@@ -1,0 +1,22 @@
+//tcs
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int N = 105, V=80 ,C=10;
+    //cin>>N>>V>>C;
+    int ans = INT_MAX;
+    int car = ceil((double)N/4.00);
+    int van = ceil((double)N/100.00);
+    ans = min(car*C , van * V);
+    for(int vans = 1 ; vans<van;vans++){
+        int rem = N % ((vans)*100);
+        cout<<rem<<endl;
+        int remc = ceil((double)rem/4.00);
+        cout<<remc<<endl;
+        ans = min(ans , (vans*V+remc*C));
+    }
+    cout<<ans;
+    return 0;
+}

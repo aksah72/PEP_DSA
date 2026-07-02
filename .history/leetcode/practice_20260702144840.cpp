@@ -48,7 +48,7 @@ int main(){
     }*/
 
     int left = 0;
-    //int ans = 0;
+    long long ans = 0;
 
     for(int right = 0;right<str.size();right++){
         if(visit[str[right]]>=left){
@@ -61,8 +61,6 @@ int main(){
     }
     cout<<ans;
 }
-
-
 
 
 

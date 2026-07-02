@@ -31,40 +31,15 @@ int main(){
 
 
 int main(){
-    string str = "bapcpak";
-    //cin>>str;
+    string str = "";
+    cin>>str;
     vector<int>visit(256,-1);
     int ans = 0;
 
-    /*for(int i =0;i<str.size();i++){
-        for(int j = i;j<str.size();j++){
-            if(visit[str[j]] != -1){
-                break;
-            }
-            visit[str[j]] = 1;
-            ans++;
-        }
-        visit.assign(256,-1);
-    }*/
-
-    int left = 0;
-    //int ans = 0;
-
-    for(int right = 0;right<str.size();right++){
-        if(visit[str[right]]>=left){
-            left = visit[str[right]] + 1 ;
-        }
-        visit[str[right]] = right;
-
-        ans += (right-left+1);
-
+    for(int i =0;i<str.size();i++){
+        for(int j = i+1;j<)
     }
-    cout<<ans;
 }
-
-
-
-
 
 
 

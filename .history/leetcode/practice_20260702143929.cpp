@@ -31,7 +31,7 @@ int main(){
 
 
 int main(){
-    string str = "bapcpak";
+    string str = "pwwkew";
     //cin>>str;
     vector<int>visit(256,-1);
     int ans = 0;
@@ -46,23 +46,15 @@ int main(){
         }
         visit.assign(256,-1);
     }*/
-
+    
     int left = 0;
-    //int ans = 0;
+    long long ans = 0;
 
     for(int right = 0;right<str.size();right++){
-        if(visit[str[right]]>=left){
-            left = visit[str[right]] + 1 ;
-        }
-        visit[str[right]] = right;
-
-        ans += (right-left+1);
 
     }
     cout<<ans;
 }
-
-
 
 
 

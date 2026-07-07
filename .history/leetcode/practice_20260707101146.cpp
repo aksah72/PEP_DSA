@@ -71,16 +71,11 @@ int digit(int num){
         sum += d;
         num = num/10;
     }
-    return digit(sum); 
-
+    
 }
 
 int main(){
-    int n;
     cin>>n;
-    int s = digit(n);
-    cout<<n<<" "<<s;
-    return 0;
 }
 
 

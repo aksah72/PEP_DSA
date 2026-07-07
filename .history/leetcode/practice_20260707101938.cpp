@@ -68,10 +68,10 @@ int digit(int num){
     int sum = 0;
     while(num>0){
         int d = num%10;
-        sum += d;
+        sum += pow(d,3);
         num = num/10;
     }
-    return digit(sum); 
+    return digit(sum);
 
 }
 
@@ -80,6 +80,7 @@ int main(){
     cin>>n;
     int s = digit(n);
     cout<<n<<" "<<s;
+    if
     return 0;
 }
 

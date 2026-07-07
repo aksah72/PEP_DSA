@@ -68,7 +68,7 @@ int digit(int num){
     int sum = 0;
     while(num>0){
         int d = num%10;
-        sum += d;
+        sum += (d*d*d;
         num = num/10;
     }
     return digit(sum); 

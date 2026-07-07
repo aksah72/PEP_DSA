@@ -65,22 +65,11 @@ int main(){
 
 int digit(int num){
     if(num<10) return num;
-    int sum = 0;
-    while(num>0){
-        int d = num%10;
-        sum += d;
-        num = num/10;
-    }
-    return digit(sum); 
-
+    num = digit()
 }
 
 int main(){
-    int n;
     cin>>n;
-    int s = digit(n);
-    cout<<n<<" "<<s;
-    return 0;
 }
 
 

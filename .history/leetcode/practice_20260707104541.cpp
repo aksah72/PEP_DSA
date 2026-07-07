@@ -71,40 +71,16 @@ int digit(int num){
         sum += d;
         num = num/10;
     }
-    return digit(sum);
-}
+    return digit(sum); 
+    cou
 
-int last = 0;
-int count8(int n) {
-  if(n==0) return 0;
-  
-  int d = n%10;
-  
-  if(d==8){
-    if(last==8){
-      last = d;
-      return 2+count8(n/10);
-    }
-    else {
-      last = d;
-      return 1+count8(n/10);
-    }
-  }
-  else {
-    last = d;
-    return count8(n/10);
-  }
 }
 
 int main(){
-    //int n;
-    //cin>>n;
-    //int s = digit(n);
-    //cout<<n<<" "<<s;
-    int s = count8(8088);
-    cout<<s;
-
-
+    int n;
+    cin>>n;
+    int s = digit(n);
+    cout<<n<<" "<<s;
     return 0;
 }
 

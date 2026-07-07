@@ -74,7 +74,6 @@ int digit(int num){
     return digit(sum);
 }
 
-int last = 0;
 int count8(int n) {
   if(n==0) return 0;
   
@@ -101,9 +100,8 @@ int main(){
     //cin>>n;
     //int s = digit(n);
     //cout<<n<<" "<<s;
-    int s = count8(8088);
-    cout<<s;
-
+    int s = count(2348);
+    
 
     return 0;
 }

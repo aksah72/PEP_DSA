@@ -101,8 +101,7 @@ int main(){
     //cin>>n;
     //int s = digit(n);
     //cout<<n<<" "<<s;
-    int s = count8(8088);
-    cout<<s;
+    int s = count8(2348);
 
 
     return 0;

@@ -111,11 +111,10 @@ int main(){
 
 class Node{
     int val;
-    Node *left , *right;
+    Node* left , right;
     Node(int data){
-        val=data;
-        left = right = NULL;
-    }
+        val=
+            }
 }
 
 int main(){

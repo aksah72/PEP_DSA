@@ -115,6 +115,7 @@ class Node{
     Node(int data){
         val=data;
         left = right = NULL;
+
     }
 }
 

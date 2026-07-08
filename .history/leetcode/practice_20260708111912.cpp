@@ -109,18 +109,6 @@ int main(){
 }
 */
 
-class Node{
-    int val;
-    Node *left , *right;
-    Node(int data){
-        val=data;
-        left = right = NULL;
-    }
-}
-
-int main(){
-
-}
 
 
 
